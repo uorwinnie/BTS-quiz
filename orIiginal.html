@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTS-ARMY</title>
+    <style>
+      .whole {
+        background: linear-gradient(
+          57.4deg,
+          rgb(249, 206, 183) 4.6%,
+          rgb(234, 174, 202) 26%,
+          rgb(210, 182, 226) 49.1%,
+          rgb(173, 209, 242) 86.5%
+        );
+        border-radius: 8px;
+        margin: 10px auto;
+        max-width: 1200px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      .inner {
+        color: rgb(80, 79, 79);
+        margin: 30px;
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 0px;
+      }
+      .square {
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid white;
+        line-height: 30px;
+      }
+      .logo {
+        margin-top: 10px;
+      }
+      .info {
+        font-size: 25px;
+        font-weight: normal;
+        line-height: 35px;
+      }
+      .heart {
+        text-decoration: none;
+      }
+      .wiki {
+        font-size: 20px;
+        color: white;
+      }
+      .buy {
+        background-color: #c8bee7;
+        font-size: 40px;
+        display: block;
+        margin: 20px auto;
+        border-radius: 4px;
+        box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
+        padding: 8px 20px;
+      }
+      .buy:hover {
+        cursor: pointer;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="whole">
+      <div class="inner">
+        <br />
+        <div class="square">
+          <img
+            class="logo"
+            src="https://logos-world.net/wp-content/uploads/2020/04/BTS-Logo.png"
+            alt="BTS Logo"
+            width="150px"
+          />
+          <h1>방탄소년단</h1>
+        </div>
+        <em><h2>I Purple You</h2></em>
+        <p class="info">
+          <strong>BTS </strong>, also known as Bangtan Boys, or 방탄소년단, is a
+          seven-member musical act from South Korea. The group was established
+          under the management of BigHit Music (now under HYBE Corporation), a
+          South Korean entertainment company founded by songwriter and producer
+          Bang Shi Hyuk. Despite the company's initial setbacks and limited
+          resources, BigHit believed in their motto, “music and artist for
+          healing,” and fostered an environment that allowed artists to develop
+          their talents and to advance on their own authority. The members of
+          BTS include Kim Namjoon (the leader), Kim Seokjin, Min Yoongi, Jung
+          Hoseok, Park Jimin, Kim Taehyung, and Jeon Jungkook. More officially,
+          each member is referred to by his stage name (in the same order): RM,
+          Jin, Suga, J-hope, Jimin, V, and Jungkook.
+          <strong>
+            If you go to google and search "BTS", you will see a purple
+            heart-shaped balloon with a microphone in it. Touch it, there is a
+            voice message from BTS members. You can just click this purple heart
+            too.<a
+              href="https://www.google.com/search?q=bts&oq=bts&aqs=chrome.0.0i271j46i67i433j69i59l4j69i61l2.1009j1j7&sourceid=chrome&ie=UTF-8"
+              target="_blank"
+              class="heart"
+              >💜</a
+            >
+          </strong>
+        </p>
+        <a href="https://en.wikipedia.org/wiki/BTS" class="wiki" target="_blank"
+          >Read more about BTS on Wikipedia</a
+        >
+        <br />
+        <hr />
+        <img
+          src="https://6.viki.io/image/48b64273a7704edb9c434b56ef22052e.jpeg?s=900x600&e=t"
+          alt="BTS group pic"
+          width="50%"
+        />
+        <hr />
+        <button class="buy">Buy BTS Concert Ticket</button>
+        <br />
+        <script>
+          function question() {
+            let name = prompt("What's your name?");
+            let email = prompt("What is your email address?");
+            let amount = prompt("How many tickets do you want to buy?");
+            if (amount > 3) {
+              alert(`Sorry, ${name} , you can't buy so many tickets at once.`);
+            } else {
+              if (amount <= 0) {
+                alert(
+                  `${name}, you will be banned from this site if you do like this again.`
+                );
+              } else {
+                alert(
+                  `Hello, ${name}! We will contect you through your emaill for detail!`
+                );
+              }
+            }
+          }
+          let ticket = document.querySelector("button");
+          ticket.addEventListener("click", question);
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
