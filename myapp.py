@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def greet():
-    return ("Welcome from YourExam result.")
+    return render_template("original.html")
 
-@app.route("/result/<int:mark>")
+@app.route("/")
 def result(mark):
     if 101> mark >=80:
         if mark==100:
