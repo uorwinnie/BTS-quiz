@@ -14,7 +14,7 @@ def info(fact):
     print(f'Email : {fact["Email"]}')
     print(f'Amount : {fact["Amount"]}')
     print()
-    return('Thank')
+    return('/')
 
 if __name__ == '__main__':
    app.run()
