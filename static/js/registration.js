@@ -3,7 +3,8 @@ function question(event) {
   var username = document.getElementById("userName").value;
   var password = document.getElementById("userPassword").value;
   console.log(username);
-  console.log(passeord);
+  console.log(password);
+
   const request = new XMLHttpRequest();
   request.open(
     "POST",

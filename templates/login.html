@@ -11,7 +11,7 @@
     <div class="register">
       <div class="box">
         <h1>Login</h1>
-        <form method="get">
+        <form action="/data" method="POST">
           <div class="inputBox">
             <label for="userName">Username</label>
             <input
@@ -19,6 +19,7 @@
               name="userName"
               id="userName"
               placeholder="your username"
+              autocomplete="off"
               required
             />
           </div>
@@ -34,7 +35,7 @@
           </div>
           <div class="click">
             <button type="submit" class="button">LOGIN</button>
-            <a href="signup.html" target="_blank">Don't have an account.</a>
+            <a href="signup.html" target="/signup">Don't have an account.</a>
           </div>
         </form>
       </div>
