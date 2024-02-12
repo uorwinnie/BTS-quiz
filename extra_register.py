@@ -1,20 +1,40 @@
 from flask import Flask, request, render_template ,redirect,url_for
+import re
 app = Flask(__name__)
 
 @app.route('/')
 def index():
    return render_template("login.html")
 
+infos = [{"name": "winnie","pws":"1234","email":"wut@gmail.com"},{"name": "logan","pws":"1111","email":"logan5@gmail.com"}]
 @app.route('/data', methods =["POST"])
 def data():
    if request.method == "POST":
-      info = {"winnie":"1234","logan":"0000","dardar":"1111","tina":"9999","ollie":"1919"}
       username = request.form.get("userName")
       password = request.form.get("userPassword") 
-      if (username in info.keys()) and password==info[username]:
-         return redirect("/quiz")
-      else:
-         return redirect("/wrong")
+      for info in infos:
+         if (username in info["name"]) and password==info["pws"]:
+            return redirect("/quiz")
+         else:
+            return redirect("/wrong")
+      
+@app.route('/quizdata', methods =["POST"])
+def quiz():
+   score = 0
+   if request.method == "POST":
+      list1 = ["oldest","member","youngest","year","debut"]
+      for i in list1:
+         num= request.form.get(i)
+         if num =="1":
+            score+=1
+      if 3 <= score <= len(list1):
+         return render_template("score.html",txt = f" Your score is {score}🤩✨")
+      if  score < 3:
+         return render_template("score.html",txt = f" Your score is {score}😢🎈")
+
+
+
+
 
 @app.route('/quiz')
 def run_quiz():
@@ -24,9 +44,11 @@ def run_quiz():
 def wrong():
    return render_template("wrong.html")
 
-@app.route('/<string:signup>/')
-def signup():
+@app.route('/register')
+def register():
    return render_template("signup.html")
+
+
  
 if __name__=='__main__':
    app.run(debug=True)
