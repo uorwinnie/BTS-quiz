@@ -33,16 +33,24 @@ def quiz():
          return render_template("score.html",txt = f" Your score is {score}😢🎈")
 
 
-
+@app.route('/signup-data',methods=["POST"])
+def sdata():
+   if request.method =="POST":
+      email = request.form.get("email")
+      password = request.form.get("userPassword")
+      cpassword = request.form.get("cPassword")
+      if re.match(r"^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$ ",email):
+         if password == cpassword:
+            return redirect('/quiz')
+         else:
+            return render_template("wrong.html",error="Password don't match")
+      else:
+            return render_template("wrong.html",error="Invalid email")
 
 
 @app.route('/quiz')
 def run_quiz():
    return render_template("quiz.html")
-
-@app.route('/wrong')
-def wrong():
-   return render_template("wrong.html")
 
 @app.route('/register')
 def register():
