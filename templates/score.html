@@ -8,7 +8,14 @@
   </head>
   <body>
     <div class="box">
-      <h1>{{txt}}</h1>
+      {% if score>2 %}
+      <h1>Your score is {{score}}🤩✨</h1>
+      {%else%}
+      <h1>Your score is {{score}}😢🎈</h1>
+      <div class="try">
+        <a href="{{url_for('score')}}">TRY AGAIN</a>
+      </div>
+      {%endif%}
     </div>
   </body>
 </html>

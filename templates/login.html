@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration-Login</title>
     <link rel="stylesheet" href="/static/css/registration.css" />
+    <script>
+      window.onload = function showAlert() {
+        alert("Something is wrong");
+      };
+    </script>
   </head>
   <body>
     <div class="box">
@@ -31,8 +36,13 @@
             required
           />
         </div>
+        {% if txt %}
+        <script>
+          showAlert();
+        </script>
+        {%endif%}
         <div class="click">
-          <button type="submit" class="button">LOGIN</button>
+          <input type="submit" value="Login" class="button" />
           <a href="{{url_for('register')}}">Don't have an account.</a>
         </div>
       </form>
